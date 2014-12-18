@@ -142,30 +142,11 @@ ul {
   }
   .articles {
     position: relative;
-    padding-top: 10px;
-    .article-title {
-      background-color: $light-color;
-      border-radius: 4px;
-      border: 1px solid $greyish;
-      box-shadow: 1px 1px 1px $greyish;
-      display: block;
-      font-size: 25px;
-      text-align: center;
-      width: 720px;
-      margin: auto;
-      padding: 7px 0;
-      &:hover {
-        cursor: pointer;
-        text-decoration: underline;
-      }
-      .small &{
-        width: 300px;
-      }
+    .articles-title {
+      border-bottom: 1px solid $opgreyish;
     }
-    .article-text {
-      margin: 2px 20px 0;
-      background-color: $black;
-      border-radius: 3px;
+    .middle {
+      padding: 0 20px;
     }
     .collapsing { // overwrites default values
       -webkit-transition: height 1s ease-in-out;
