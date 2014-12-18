@@ -1,0 +1,16 @@
+<div class="top-part">
+	<div class="main-bar">
+		<ul class="bar-list">
+			<li><a id="logo" href="#">חלום</a></li>
+			<!--ADD "show-ignored-bar" class here to open bar on "small"-->
+			<span class="ignore-small" ng-class="{'show-ignored-bar':getBarClass()}">
+				<li><a href="#/lucid">המדריך לרוקם החלומות</a></li>
+				<li><a href="#/articles">מאמרים</a></li>
+				<li><a href="#">בתולת החלומות</a></li></li>
+				<li><a href="#">פורום</a></li>
+			</span>
+			<!--ADD "bar-opened-btn" class here change button color to show it's opened-->
+			<li><a ng-click="toggleBar()" class="bar-btn" ng-class="{'bar-opened-btn':getBarClass()}"  href="">&#9776</a></li>
+		</ul>
+	</div>
+</div>
