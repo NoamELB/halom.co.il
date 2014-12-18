@@ -10,21 +10,13 @@
 	'use strict';
 	angular.module('footerController', [])
 	.controller('FooterController', ['$scope', function($scope) {
-		// hides other tooltip when showing this
-		$scope.showConnect = function() { 
-			$scope.connect = '<p class="rtl">פרטים<br>'
-							+'<a target="_blank" href="mailto:mic.exe@gmail.com">mic.exe@gmail.com</a><p>';
-			$scope.about = '';
-		};
-		// hides other tooltip when showing this
-		$scope.showAbout = function() {
-			$scope.connect = '';
-			$scope.about = '<p class="rtl">האתר נוצר על ידי: <br>'
-			+ '<a popover="hi" popover-trigger="mouseenter" target="_blank" href="https://www.linkedin.com/pub/tzook-shaked/a4/230/6a0">צוק שקד</a>'
-			+ ' ו<a target="_blank" href="https://www.linkedin.com/pub/noam-elboim/a6/372/a">נעם אלבוים</a>.<br>'
-			+ '<a target="_blank" href="mailto:tzook10@gmail.com">tzook10@gmail.com</a><br>'
-			+ '<a target="_blank" href="mailto:noam@mail.com">noam@mail.com</a><br>'
-			+ '<a target="_blank" href="https://github.com/NoamELB/etielboim">לקבצי מקור</a></p>';
-		};
+		$scope.connect = '<p class="rtl">פרטים<br>'
+						+'<a target="_blank" href="mailto:mic.exe@gmail.com">mic.exe@gmail.com</a><p>';
+		$scope.about = '<p class="rtl">האתר נוצר על ידי: <br>'
+		+ '<a popover="hi" popover-trigger="mouseenter" target="_blank" href="https://www.linkedin.com/pub/tzook-shaked/a4/230/6a0">צוק</a>'
+		+ ' & <a target="_blank" href="https://www.linkedin.com/pub/noam-elboim/a6/372/a">נעם</a>.<br>'
+		+ '<a target="_blank" href="mailto:tzook10@gmail.com">tzook10@gmail.com</a><br>'
+		+ '<a target="_blank" href="mailto:noam@mail.com">noam@mail.com</a><br>'
+		+ '<a target="_blank" href="https://github.com/NoamELB/halom.co.il">קבצי מקור</a></p>';
 	}]);
 })(angular);
