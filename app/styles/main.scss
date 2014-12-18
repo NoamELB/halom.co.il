@@ -117,7 +117,9 @@ ul {
       letter-spacing: -0.3px;
       display: block;
       text-align: center;
-      padding: 5px 9px;
+      margin: 0 auto;
+      padding: 5px 0;
+      width: 250px;
       background: $light-color; 
       color: $opgreyish;
       &:hover {
