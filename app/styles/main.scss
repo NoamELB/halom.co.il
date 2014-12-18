@@ -95,12 +95,23 @@ ul {
     line-height: 28px;
   }
   .middle {
-    padding: 20px 20px;
     max-width: $width;
-    height: 100%;
     min-width: $min-width;
     margin: 0 auto;
-    background: $black;
+      padding: 20px 20px;
+      background: $black;
+      /* transition: 2.5s ease-out max-height, 1s ease-out padding;
+      &.ng-hide-add,
+      &.ng-hide-remove.ng-hide-remove-active {
+        padding: 20px 20px;
+        max-height: 1000px;
+        display: block !important;
+      }
+      &.ng-hide-add.ng-hide-add-active,
+      &.ng-hide-remove {
+        max-height: 0;
+        padding: 0 20px;
+      } */
     .link-next {
       margin-right: 9px;
       padding: 5px 9px;
@@ -128,7 +139,7 @@ ul {
         text-decoration: none;
       }
     }
-    ul {
+    ul, ol {
        margin-right: $push*3;
       li {
         font-size: 16px;
@@ -137,7 +148,6 @@ ul {
         padding: $push $push;
         font-weight: normal;
         color: $light-color;
-        list-style: disc;
       }
     }
   }
