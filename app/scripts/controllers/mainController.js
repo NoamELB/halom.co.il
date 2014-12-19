@@ -9,7 +9,7 @@
 
 		$timeout(function() {
 			$scope.loadDelay = true;
-		}, 100);
+		}, 200);
 		
 
 		$scope.lucidModal = function() {

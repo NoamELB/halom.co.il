@@ -1,9 +1,7 @@
 <section class="middle">
 	<div ng-repeat="article in articles" class="articles">
 		<a href="" class="link-articles articles-title" ng-click="toggle($index)" ng-bind="article.title"></a>
-		<div collapse="!article.isOpen" class="middle">
-			<div ng-bind-html="getHtml(article.text)"></div>
-		</div>
+		<div collapse="!article.isOpen" ng-bind-html="getHtml(article.text)" class="middle"></div>
 	</div>
 			<!--<div class="fb-comments" data-href="https://www.facebook.com/halom.co.il" data-width="100%" data-numposts="5" data-colorscheme="dark"></div>-->
 

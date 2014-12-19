@@ -72,9 +72,7 @@ ul {
   width: 100%;
   min-width: $min-width;
   min-height: $min-height;
-  position: relative;
-  transform: rotate(360deg);
-  transition: 1s ease-in-out all;
+  transition: 1s ease-in-out opacity;
   .center {
     text-align: center;
   }
@@ -333,6 +331,7 @@ ul {
   }
   .top-part { 
     width: 100%;
+    position: relative;
     min-width: $min-width;
     height: $bar-height;
     padding: 0;
@@ -381,15 +380,13 @@ ul {
       width: 200px;
       background: $black;
       border-top: 1px solid $light-grey;
-        transition: .5s ease all;
+      transition: .5s ease width, .5s ease opacity;
         &.ng-hide-add,
         &.ng-hide-remove.ng-hide-remove-active {
-          width: 200px;
           opacity: .9;
         }
         &.ng-hide-remove,
         &.ng-hide-add.ng-hide-add-active {
-          width: 0;
           opacity: 0;
         }
       li a {

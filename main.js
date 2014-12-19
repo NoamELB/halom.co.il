@@ -1,15 +1,23 @@
-var express = require("express");
+(function() {
+	'use strict';
+	var fs 			= require("fs"),
+		express 	= require("express"),
+		http 		= require("http");
 
-// Setting up the server
-var app = express();
+	// Setting up the server
+	var app = express();
+	var server = http.createServer(app);
 
-app.set('port', (process.env.PORT || 5000));
+	var config = JSON.parse(fs.readFileSync("./routes/config.json"));
+	var host = config.host;
+	var port = config.port;
 
-app.use(express.static(__dirname + '/app'));
-app.get("/", function(req, res) {
-	res.render('index');
-});
+	app.use(express.static(__dirname + '/app'));
+	app.get("/", function(req, res) {
+		res.render('index');
+	});
 
-app.listen(app.get('port'), function(){
-	console.log("\t+*+*+ New server on localhost:" + app.get('port') + " +*+*+");
-});
+	server.listen(port, host, function(){
+		console.log("\t+*+*+ New server on " + host + ":" + port + " +*+*+");
+	});
+})();
