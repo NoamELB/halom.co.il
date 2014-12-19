@@ -10,6 +10,7 @@
   $light-grey:#cccccc;
   $logo-color:#660033;
 	$black:rgba(0,0,0,0.9);
+  $silver: silver;
   $opgreyish:rgba(51, 51, 51, 0.95);
 	$push:10px;
   $width:960px;
@@ -218,9 +219,12 @@ ul {
         letter-spacing: -0.5px;
         color: $light-color;
         &:hover {
-          color:$greyish;
+          color: $silver;
         }
       }
+    }
+    .clicked {
+      color: $silver !important;
     }
   }
 }
@@ -291,6 +295,7 @@ ul {
       margin: 10px auto;
       display: block;
     }
+
   }
 /*
  * SMALL SCREEN VERSION
@@ -340,9 +345,6 @@ ul {
         }
       }
     }
-    .ignore-small {
-      display: none;
-    }
     .bar-btn {
       font-size: 15px;
       cursor: pointer;
@@ -372,12 +374,6 @@ ul {
         border-bottom: 1px solid $light-grey;
         border-left: 1px solid $light-grey;
         border-right: 1px solid $light-grey;
-      }
-    }
-    .bar-opened-btn {
-      color: $greyish !important;
-      &:hover{
-        color: $light-color !important;
       }
     }
   }

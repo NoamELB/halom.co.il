@@ -5,7 +5,6 @@
 		['ngAnimate',
 		 'ui.bootstrap',
 		 'articlesController',
-		 'footerController',
 		 'mainController',
 		 'welcomeController',
 		 'widthController',
