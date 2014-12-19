@@ -10,7 +10,7 @@
 
 		$timeout(function() {
 			$scope.display = true;
-		}, 500);
+		}, 200);
 
 		$http.get('articles.json').success(function(data){ // gets articles for child scope - Articles
 			$scope.data = data;
