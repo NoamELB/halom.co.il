@@ -18,18 +18,19 @@
   $bar-height:56px;
 
 html {
-    width: 100%;
-    height: 100%;
-    -ms-text-size-adjust: 100%;
-  	-webkit-text-size-adjust: 100%;
-    direction: rtl;
+  width: 100%;
+  height: 100%;
+  -ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+  direction: rtl;
 }
 body {
 	font-family: 'Alef Hebrew', serif;
-    width:100%;
-    height: 100%;
-    margin: 0 0;
-    position: relative;
+  width:100%;
+  height: 100%;
+  margin: 0 0;
+  position: relative;
+  background: $bg-color;
 }
 footer, section {
 	display: block;
@@ -65,13 +66,13 @@ ul {
  * MAIN
  * ====
  */
- .bg {
-  background: $bg-color;
- }
 .main-cnt {
   width: 100%;
   min-width: $min-width;
   min-height: $min-height;
+  position: relative;
+  opacity: 1;
+  transition: 1s ease-in-out all;
   .center {
     text-align: center;
   }
@@ -100,18 +101,6 @@ ul {
     margin: 0 auto;
       padding: 20px 20px;
       background: $black;
-      /* transition: 2.5s ease-out max-height, 1s ease-out padding;
-      &.ng-hide-add,
-      &.ng-hide-remove.ng-hide-remove-active {
-        padding: 20px 20px;
-        max-height: 1000px;
-        display: block !important;
-      }
-      &.ng-hide-add.ng-hide-add-active,
-      &.ng-hide-remove {
-        max-height: 0;
-        padding: 0 20px;
-      } */
     .link-next {
       margin-right: 9px;
       padding: 5px 9px;
@@ -149,6 +138,23 @@ ul {
         font-weight: normal;
         color: $light-color;
       }
+    }
+  }
+/*
+ * ANIMATE PAGE-TRANSITIONS
+ * ========================
+ */
+  &.ng-enter { // new partial begins
+    opacity: 0;
+    &.ng-enter-active { // new partial ends
+      opacity: 1;
+    }
+  }
+  &.ng-leave { // old partial begins
+    position: absolute; // so old and new can overlap
+    opacity: 1;
+    &.ng-leave-active { // old partial ends
+      opacity: 0;
     }
   }
 }
