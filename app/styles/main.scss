@@ -156,7 +156,9 @@ ul {
       &:hover {
         cursor: pointer;
         text-decoration: underline;
-
+      }
+      .small &{
+        width: 300px;
       }
     }
     .article-text {

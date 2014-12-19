@@ -5426,6 +5426,8 @@ ul {
       .main-cnt .articles .article-title:hover {
         cursor: pointer;
         text-decoration: underline; }
+      .small .main-cnt .articles .article-title {
+        width: 300px; }
     .main-cnt .articles .article-text {
       margin: 2px 20px 0;
       background-color: rgba(0, 0, 0, 0.9);
