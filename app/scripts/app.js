@@ -25,7 +25,8 @@
 			controller: 'LucidController'
 		})
 		.when('/articles', {
-			templateUrl: 'partials/articles.html'
+			templateUrl: 'partials/articles.html',
+			controller: 'ArticlesController'
 		})
 		.otherwise({
 			redirectTo: '/' // default page

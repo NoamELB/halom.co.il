@@ -4,6 +4,7 @@
 	angular.module('siteControllers', 
 		['ngAnimate',
 		 'ui.bootstrap',
+		 'articlesController',
 		 'footerController',
 		 'mainController',
 		 'welcomeController',

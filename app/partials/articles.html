@@ -1,0 +1,7 @@
+<section>
+	<div ng-repeat="article in articles" class="articles">
+		<div class="article-title" ng-click="toggle($index)" ng-bind="article.title"></div>
+		<div collapse="!article.isOpen" ng-bind-html="getHtml(article.text)" class="article-text">
+		</div>
+	</div>
+</section>
