@@ -72,7 +72,6 @@ ul {
   width: 100%;
   min-width: $min-width;
   min-height: $min-height;
-  transition: 1s ease-in-out opacity;
   .center {
     text-align: center;
   }
@@ -165,12 +164,14 @@ ul {
  * ========================
  */
   &.ng-enter { // new partial begins
+    transition: 1s ease-in-out opacity;
     opacity: 0;
     &.ng-enter-active { // new partial ends
       opacity: 1;
     }
   }
   &.ng-leave { // old partial begins
+    transition: 1s ease-in-out opacity;
     position: absolute; // so old and new can overlap
     opacity: 1;
     &.ng-leave-active { // old partial ends
@@ -374,15 +375,24 @@ ul {
       width: 200px;
       background: $black;
       border-top: 1px solid $light-grey;
-      transition: .5s ease width, .5s ease opacity;
-        &.ng-hide-add,
-        &.ng-hide-remove.ng-hide-remove-active {
-          opacity: .9;
-        }
-        &.ng-hide-remove,
-        &.ng-hide-add.ng-hide-add-active {
-          opacity: 0;
-        }
+      /* needed for animation to work well */
+      &.ng-hide-add, .my-element.ng-hide-remove {
+        transition: 0s linear all;
+      }
+      &.ng-hide-add-active,
+      &.ng-hide-remove-active {
+        transition: .5s linear all;
+      }
+
+
+      &.ng-hide-add,
+      &.ng-hide-remove.ng-hide-remove-active {
+        opacity: .9;
+      }
+      &.ng-hide-remove,
+      &.ng-hide-add.ng-hide-add-active {
+        opacity: 0;
+      }
       li a {
         padding: $push 5px;
         display: block;

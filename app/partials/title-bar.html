@@ -2,7 +2,7 @@
 	<div class="main-bar">
 		<ul class="bar-list">
 			<li><a id="logo" href="#/">חלום</a></li>
-			<span ng-class="{'show-ignored-bar': display}" ng-show="!isSmall || isClicked">
+			<span class="show-ignored-bar ng-hide" ng-show="!isSmall || isClicked">
 				<li><a ng-class="{'clicked': loc[0].clicked}" href="#{{::loc[0].url}}">המדריך לרוקם החלומות</a></li>
 				<li><a ng-class="{'clicked': loc[1].clicked}" href="#{{::loc[1].url}}">מאמרים</a></li>
 				<li><a ng-class="{'clicked': loc[2].clicked}" href="#{{::loc[2].url}}">בתולת החלומות</a></li></li>

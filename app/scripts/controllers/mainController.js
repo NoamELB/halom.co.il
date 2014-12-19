@@ -6,13 +6,8 @@
 	angular.module('mainController', [])
 	.controller('MainController', ['$scope', '$http', '$timeout', '$modal', function ($scope, $http, $timeout, $modal) {
 		$scope.data = [];
-		$scope.display = false;
 
-		$timeout(function() {
-			$scope.display = true;
-		}, 200);
-
-		$http.get('articles.json').success(function(data){ // gets articles for child scope - Articles
+		$http.get('articles.json').success(function(data){
 			$scope.data = data;
 			//angular.forEach($scope.articles, function(article){
 				//$scope.articles[0].text+='<div class="fb-comments" data-href="https://www.facebook.com/halom.co.il" data-width="100%" data-numposts="5" data-colorscheme="dark"></div>';
