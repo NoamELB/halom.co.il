@@ -5410,6 +5410,30 @@ ul {
         padding: 10px 10px;
         font-weight: normal;
         color: white; }
+  .main-cnt .articles {
+    padding-top: 10px; }
+    .main-cnt .articles .article-title {
+      background-color: white;
+      border-radius: 4px;
+      border: 1px solid #333333;
+      box-shadow: 1px 1px 1px #333333;
+      display: block;
+      font-size: 25px;
+      text-align: center;
+      width: 720px;
+      margin: auto;
+      padding: 7px 0; }
+      .main-cnt .articles .article-title:hover {
+        cursor: pointer;
+        text-decoration: underline; }
+    .main-cnt .articles .article-text {
+      margin: 2px 20px 0;
+      background-color: rgba(0, 0, 0, 0.9);
+      border-radius: 3px; }
+    .main-cnt .articles .collapsing {
+      -webkit-transition: height 1s ease-in-out;
+      -o-transition: height 1s ease-in-out;
+      transition: height 1s ease-in-out; }
   .main-cnt.ng-enter {
     opacity: 0; }
     .main-cnt.ng-enter.ng-enter-active {
