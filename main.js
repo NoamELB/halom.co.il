@@ -1,23 +1,15 @@
-(function() {
-	'use strict';
-	var fs 			= require("fs"),
-		express 	= require("express"),
-		http 		= require("http");
+var express = require("express");
 
-	// Setting up the server
-	var app = express();
-	var server = http.createServer(app);
+// Setting up the server
+var app = express();
 
-	var config = JSON.parse(fs.readFileSync("./routes/config.json"));
-	var host = config.host;
-	var port = config.port;
+app.set('port', (process.env.PORT || 5000));
 
-	app.use(express.static(__dirname + '/app'));
-	app.get("/", function(req, res) {
-		res.render('index');
-	});
+app.use(express.static(__dirname + '/app'));
+app.get("/", function(req, res) {
+	res.render('index');
+});
 
-	server.listen(port, host, function(){
-		console.log("\t+*+*+ New server on " + host + ":" + port + " +*+*+");
-	});
-})();
+app.listen(app.get('port'), function(){
+	console.log("\t+*+*+ New server on localhost:" + app.get('port') + " +*+*+");
+});
