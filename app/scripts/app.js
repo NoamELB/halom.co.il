@@ -19,6 +19,9 @@
 			templateUrl: 'partials/articles.html',
 			controller: 'ArticlesController'
 		})
+		.when('/dreamv', {
+			templateUrl: 'partials/dreamvbook.html'
+		})
 		.otherwise({
 			redirectTo: '/' // default page
 		});

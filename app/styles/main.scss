@@ -15,7 +15,7 @@
 	$push:10px;
   $width:960px;
 	$min-width:300px;
-  $min-height:300px;
+  $min-height:200px;
   $bar-height:56px;
 
 html {
@@ -140,6 +140,12 @@ ul {
         color: $light-color;
       }
     }
+    .x{
+      font-weight: bold;
+      &:hover{
+        text-decoration: none;
+      }
+    }
   }
   .articles {
     position: relative;
@@ -186,6 +192,9 @@ ul {
   padding: 0 0;
   margin: 0 auto;
   background: $bar-bg;
+  -webkit-box-shadow: 0px 0px 8px -1px $black;
+  -moz-box-shadow: 0px 0px 8px -1px $black;
+  box-shadow: 0px 0px 8px -1px $black;
   .main-bar {
     max-width: $width;
     min-width: $min-width;
@@ -204,7 +213,7 @@ ul {
       font-size: 34px;
       text-shadow: 1px 0 0 black;
       padding-top: 0;
-      padding-right: 0;
+      padding-right: 7px;
       &:hover{
         color: $light-color;
       }
@@ -364,7 +373,7 @@ ul {
       opacity: .9;
       top: 55px;
       left:0;
-      width:30%;
+      width:40%;
       background: $black;
       border-top: 1px solid $light-grey;
       li a {

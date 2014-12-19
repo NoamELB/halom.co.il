@@ -4,7 +4,7 @@
 (function(angular){
 	'use strict';
 	angular.module('siteTitlebar', [])
-	.controller('TitlebarController', ['$scope', '$location', function($scope, $location) {
+	.controller('TitlebarController', ['$scope', '$location','$modal', function($scope, $location, $modal) {
 			$scope.isClicked = false;
 			$scope.loc = [{"url":"/lucid", "clicked": false},
 								{"url":"/articles", "clicked": false},
@@ -17,6 +17,12 @@
 					loc.clicked = (val == loc.url);
 				});
 			});
+
+			$scope.openForum = function(){
+				$modal.open({
+	        		templateUrl: 'partials/forum.html'
+	        	});
+			};
 	}])
 	.directive('titleBar', function() { // makes the entire title-bar in another HTML template
 	    return {
