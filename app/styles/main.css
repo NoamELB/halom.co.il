@@ -5411,6 +5411,7 @@ ul {
         font-weight: normal;
         color: white; }
   .main-cnt .articles {
+    position: relative;
     padding-top: 10px; }
     .main-cnt .articles .article-title {
       background-color: white;
@@ -5451,6 +5452,8 @@ ul {
  * ===
  */
 .top-part {
+  position: relative;
+  z-index: 1;
   width: 100%;
   min-width: 300px;
   height: 56px;
