@@ -14,9 +14,9 @@
 
 		$http.get('articles.json').success(function(data){
 			$scope.articles = data;
-			angular.forEach($scope.articles, function(article){
-				article.text+='<div class="fb-comments" data-href="https://www.facebook.com/halom.co.il" data-width="100%" data-numposts="5" data-colorscheme="dark"></div>';
-			});
+			//angular.forEach($scope.articles, function(article){
+				$scope.articles[0].text+='<div class="fb-comments" data-href="https://www.facebook.com/halom.co.il" data-width="100%" data-numposts="5" data-colorscheme="dark"></div>';
+			//});
 		});
 
 		/* convert the string to html format */
