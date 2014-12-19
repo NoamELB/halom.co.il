@@ -4,13 +4,20 @@
 (function(angular){
 	'use strict';
 	angular.module('mainController', [])
-	.controller('MainController', ['$scope', '$timeout', '$modal', function ($scope, $timeout, $modal) {
-		$scope.loadDelay = false;	
+	.controller('MainController', ['$scope', '$http', '$timeout', '$modal', function ($scope, $http, $timeout, $modal) {
+		$scope.data = [];
+		$scope.display = false;
 
 		$timeout(function() {
-			$scope.loadDelay = true;
-		}, 200);
-		
+			$scope.display = true;
+		}, 500);
+
+		$http.get('articles.json').success(function(data){ // gets articles for child scope - Articles
+			$scope.data = data;
+			//angular.forEach($scope.articles, function(article){
+				//$scope.articles[0].text+='<div class="fb-comments" data-href="https://www.facebook.com/halom.co.il" data-width="100%" data-numposts="5" data-colorscheme="dark"></div>';
+			//});
+		});
 
 		$scope.lucidModal = function() {
 			$modal.open({
@@ -25,8 +32,6 @@
 		$timeout(function() { // start reality check after 30s
 			$scope.lucidModal();
 		}, 30000);
-
-
 
 	}]);
 })(angular);

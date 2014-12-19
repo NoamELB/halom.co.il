@@ -7,17 +7,19 @@
 	'use strict';
 	angular.module('articlesController', [])
 	.controller('ArticlesController', ['$scope', '$http', '$sce', '$timeout', function($scope, $http, $sce, $timeout) {
-		$scope.articles = [];
+		$scope.articles = $scope.data; // gets data from father scope - Main
 		var current = -1;
 		var delay = false;
-
-
-		$http.get('articles.json').success(function(data){
+		
+		$http.get('articles.json').success(function(data){ // gets articles for child scope - Articles
 			$scope.articles = data;
 			//angular.forEach($scope.articles, function(article){
 				//$scope.articles[0].text+='<div class="fb-comments" data-href="https://www.facebook.com/halom.co.il" data-width="100%" data-numposts="5" data-colorscheme="dark"></div>';
 			//});
 		});
+
+		if ($scope.articles === [])
+			console.log("duh");
 
 		/* convert the string to html format */
 		$scope.getHtml = function(unsafeHtml) {

@@ -5432,10 +5432,6 @@ ul {
     opacity: 1; }
     .main-cnt.ng-leave.ng-leave-active {
       opacity: 0; }
-  .small .main-cnt.ng-hide-remove, .main-cnt.ng-hide-remove {
-    opacity: 0; }
-    .small .main-cnt.ng-hide-remove.ng-hide-remove-active, .main-cnt.ng-hide-remove.ng-hide-remove-active {
-      opacity: 1; }
 
 /*
  * BAR
@@ -5544,52 +5540,52 @@ ul {
  * SMALL SCREEN VERSION
  * ====================
  */
-.small .animateSmall h1 {
+.small h1 {
   font-size: 32px;
   letter-spacing: -0.5px; }
-.small .animateSmall h2 {
+.small h2 {
   font-size: 23px;
   letter-spacing: -0.4px; }
-.small .animateSmall p, .small .animateSmall .text {
+.small p, .small .text {
   font-size: 15px;
   letter-spacing: -0.1px;
   line-height: 18px; }
-.small .animateSmall a {
+.small a {
   letter-spacing: -0.2px; }
-.small .animateSmall .top-part {
+.small .top-part {
   width: 100%;
   position: relative;
   min-width: 300px;
   height: 56px;
   padding: 0;
   margin: 0 auto; }
-  .small .animateSmall .top-part .main-bar {
+  .small .top-part .main-bar {
     width: 100%;
     min-width: 300px;
     height: 55px;
     margin: 0px auto;
     padding: 0; }
-  .small .animateSmall .top-part ul {
+  .small .top-part ul {
     width: inherit;
     height: 55px; }
-  .small .animateSmall .top-part .bar-list {
+  .small .top-part .bar-list {
     position: relative; }
-    .small .animateSmall .top-part .bar-list li a {
+    .small .top-part .bar-list li a {
       padding: 7px 12px 5px;
       font-size: 18px;
       letter-spacing: -0.3px; }
-  .small .animateSmall .top-part #logo {
+  .small .top-part #logo {
     font-size: 34px;
     text-shadow: 1px 0 0 black;
     padding-right: 10px;
     float: right; }
-  .small .animateSmall .top-part .bar-btn {
+  .small .top-part .bar-btn {
     font-size: 15px;
     cursor: pointer;
     display: block;
     margin: 9px 0 0 10px;
     float: left; }
-  .small .animateSmall .top-part .show-ignored-bar {
+  .small .top-part .show-ignored-bar {
     white-space: nowrap;
     display: inline;
     position: absolute;
@@ -5600,18 +5596,18 @@ ul {
     background: rgba(0, 0, 0, 0.9);
     border-top: 1px solid #cccccc;
     transition: .5s ease width, .5s ease opacity; }
-    .small .animateSmall .top-part .show-ignored-bar.ng-hide-add, .small .animateSmall .top-part .show-ignored-bar.ng-hide-remove.ng-hide-remove-active {
+    .small .top-part .show-ignored-bar.ng-hide-add, .small .top-part .show-ignored-bar.ng-hide-remove.ng-hide-remove-active {
       opacity: .9; }
-    .small .animateSmall .top-part .show-ignored-bar.ng-hide-remove, .small .animateSmall .top-part .show-ignored-bar.ng-hide-add.ng-hide-add-active {
+    .small .top-part .show-ignored-bar.ng-hide-remove, .small .top-part .show-ignored-bar.ng-hide-add.ng-hide-add-active {
       opacity: 0; }
-    .small .animateSmall .top-part .show-ignored-bar li a {
+    .small .top-part .show-ignored-bar li a {
       padding: 10px 5px;
       display: block;
       text-align: center;
       border-bottom: 1px solid #cccccc;
       border-left: 1px solid #cccccc;
       border-right: 1px solid #cccccc; }
-.small .animateSmall .btn-start {
+.small .btn-start {
   max-width: 220px; }
-  .small .animateSmall .btn-start a {
+  .small .btn-start a {
     font-size: 14px; }

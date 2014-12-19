@@ -177,12 +177,6 @@ ul {
       opacity: 0;
     }
   }
-  .small &.ng-hide-remove, &.ng-hide-remove { // animate first page
-    opacity: 0;
-    &.ng-hide-remove-active {
-      opacity: 1;
-    }
-  }
 }
 /*
  * BAR
@@ -312,7 +306,7 @@ ul {
  * SMALL SCREEN VERSION
  * ====================
  */
-.small .animateSmall {
+.small {
   h1 {
     font-size: 32px;
     letter-spacing: -0.5px;
