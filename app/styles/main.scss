@@ -32,6 +32,7 @@ body {
   margin: 0 0;
   position: relative;
   background: $bg-color;
+  overflow: hidden;
 }
 footer, section {
 	display: block;
@@ -72,7 +73,7 @@ ul {
   min-width: $min-width;
   min-height: $min-height;
   position: relative;
-  opacity: 1;
+  transform: rotate(360deg);
   transition: 1s ease-in-out all;
   .center {
     text-align: center;
@@ -178,6 +179,12 @@ ul {
       opacity: 0;
     }
   }
+  .small &.ng-hide-remove, &.ng-hide-remove { // animate first page
+    opacity: 0;
+    &.ng-hide-remove-active {
+      opacity: 1;
+    }
+  }
 }
 /*
  * BAR
@@ -185,7 +192,7 @@ ul {
  */
 .top-part {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   width: 100%;
   min-width: $min-width;
   height: $bar-height;
@@ -205,9 +212,6 @@ ul {
     ul {
       height: 55px;
       float: right;
-    }
-    .bar-btn {
-      display: none;
     }
     #logo {
       font-size: 34px;
@@ -310,7 +314,7 @@ ul {
  * SMALL SCREEN VERSION
  * ====================
  */
-.small {
+.small .animateSmall {
   h1 {
     font-size: 32px;
     letter-spacing: -0.5px;
@@ -354,6 +358,12 @@ ul {
         }
       }
     }
+    #logo {
+      font-size: 34px;
+      text-shadow: 1px 0 0 black;
+      padding-right: 10px;
+      float: right;
+    }
     .bar-btn {
       font-size: 15px;
       cursor: pointer;
@@ -361,21 +371,27 @@ ul {
       margin: 9px 0 0 10px;
       float: left;
     }
-    #logo {
-      font-size: 34px;
-      text-shadow: 1px 0 0 black;
-      padding-right: 10px;
-      float: right;
-    }
     .show-ignored-bar {
+      white-space: nowrap;
       display: inline;
       position: absolute;
       opacity: .9;
       top: 55px;
-      left:0;
-      width:40%;
+      left: 0;
+      width: 200px;
       background: $black;
       border-top: 1px solid $light-grey;
+        transition: .5s ease all;
+        &.ng-hide-add,
+        &.ng-hide-remove.ng-hide-remove-active {
+          width: 200px;
+          opacity: .9;
+        }
+        &.ng-hide-remove,
+        &.ng-hide-add.ng-hide-add-active {
+          width: 0;
+          opacity: 0;
+        }
       li a {
         padding: $push 5px;
         display: block;

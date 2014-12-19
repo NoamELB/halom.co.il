@@ -22,11 +22,11 @@
 		<link href='http://fonts.googleapis.com/earlyaccess/alefhebrew.css' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="styles/main.css">
 	</head>
-	<body ng-controller="MainController">
+	<body ng-class="{'animateSmall':loadDelay}" ng-controller="MainController">
 
 		<title-bar></title-bar>
 
-		<div class="main-cnt" ng-view></div>
+		<div ng-show="loadDelay" class="main-cnt" ng-view></div>
 
 		<footer-bar></footer-bar>
 		
