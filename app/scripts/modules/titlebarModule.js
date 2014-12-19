@@ -20,7 +20,7 @@
 
 			$scope.openForum = function(){
 				$modal.open({
-	        		templateUrl: 'partials/forum.html'
+	        		templateUrl: 'partials/modals/forum.html'
 	        	});
 			};
 	}])

@@ -5310,7 +5310,7 @@ body {
   margin: 0 0;
   position: relative;
   background: #e8e8e7;
-  overflow: hidden; }
+  overflow-x: hidden; }
 
 footer, section {
   display: block; }
@@ -5499,7 +5499,7 @@ ul {
       display: inline;
       padding: 0 6px; }
       .footer-bar ul li a {
-        font-size: 16 px;
+        font-size: 16px;
         text-decoration: none;
         letter-spacing: -0.3px;
         color: #660033 !important; }

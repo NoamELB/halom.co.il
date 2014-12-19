@@ -32,7 +32,7 @@ body {
   margin: 0 0;
   position: relative;
   background: $bg-color;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 footer, section {
 	display: block;
@@ -255,7 +255,7 @@ ul {
       display: inline;
       padding: 0 6px;
       a {
-        font-size: 16 px;
+        font-size: 16px;
         text-decoration: none;
         letter-spacing: -0.3px;
         color: $logo-color !important;
