@@ -357,10 +357,10 @@ ul {
       float: right;
     }
     .bar-btn {
-      font-size: 15px;
+      padding-top: 0 !important;
+      font-size: 40px !important;
       cursor: pointer;
       display: block;
-      margin: 9px 0 0 10px;
       float: left;
     }
     .show-ignored-bar {
@@ -373,7 +373,7 @@ ul {
       width: 200px;
       background: $black;
       border-top: 1px solid $light-grey;
-      /* needed for animation to work well */
+      /* needed for animation to  work well */
       &.ng-hide-add, .my-element.ng-hide-remove {
         transition: 0s linear all;
       }

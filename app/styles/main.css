@@ -5580,10 +5580,10 @@ ul {
     padding-right: 10px;
     float: right; }
   .small .top-part .bar-btn {
-    font-size: 15px;
+    padding-top: 0 !important;
+    font-size: 40px !important;
     cursor: pointer;
     display: block;
-    margin: 9px 0 0 10px;
     float: left; }
   .small .top-part .show-ignored-bar {
     white-space: nowrap;
@@ -5595,7 +5595,7 @@ ul {
     width: 200px;
     background: rgba(0, 0, 0, 0.9);
     border-top: 1px solid #cccccc;
-    /* needed for animation to work well */ }
+    /* needed for animation to  work well */ }
     .small .top-part .show-ignored-bar.ng-hide-add, .small .top-part .show-ignored-bar .my-element.ng-hide-remove {
       transition: 0s linear all; }
     .small .top-part .show-ignored-bar.ng-hide-add-active, .small .top-part .show-ignored-bar.ng-hide-remove-active {
