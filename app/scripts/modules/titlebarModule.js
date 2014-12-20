@@ -9,7 +9,7 @@
 			$scope.isClicked = false;
 			$scope.loc = [
 				{"url":"/lucid", "clicked": false},
-				{"url":"/articles", "clicked": false},
+				{"url":"/articles/-1", "clicked": false},
 				{"url":"/dreamv", "clicked": false}
 			];
 

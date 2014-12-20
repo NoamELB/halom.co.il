@@ -5,6 +5,7 @@
 		['ngAnimate',
 		 'ui.bootstrap',
 		 'articlesController',
+		 'checkController',
 		 'mainController',
 		 'widthController',
 		 'lucidController']);

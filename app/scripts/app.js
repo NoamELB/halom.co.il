@@ -26,7 +26,7 @@
 			templateUrl: 'partials/lucid.html',
 			controller: 'LucidController'
 		})
-		.when('/articles', {
+		.when('/articles/:toOpen', {
 			templateUrl: 'partials/articles.html',
 			controller: 'ArticlesController'
 		})

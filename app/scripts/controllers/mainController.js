@@ -10,7 +10,7 @@
 (function(angular){
 	'use strict';
 	angular.module('mainController', [])
-	.controller('MainController', ['$scope', '$http', '$timeout', '$modal', function ($scope, $http, $timeout, $modal) {
+	.controller('MainController', ['$scope', '$http', '$timeout', '$modal', '$location', function ($scope, $http, $timeout, $modal, $location) {
 		$scope.data = [];
 
 		/* gets JSON data for child scope - gets it on page-load instead of partial load */
@@ -24,16 +24,25 @@
 			$modal.open({
 	    		templateUrl: 'partials/modals/reality-check.html',
 	    		size: 'sm'
-	    	}).result.then(function () {}, function() {
+	    	}).result.then(function () {}, function(result) {
+	    		if (result === 'check')
+	    			$modal.open({
+	    				templateUrl: 'partials/modals/check.html',
+	    				controller: 'CheckController',
+	    				size: 'sm'
+	    			});
+	    		else if (result === 'goToArticle') {
+	    			$location.path('/articles/2');
+	    		}
 				$timeout(function() { // call function again
 					$scope.lucidModal();
 				}, 60000 * Math.random() + 120000); // 2-3 minutes		    	
 		    });
 		};
 
-		/* start reality check after 30s */
+		/* start reality check after 60s */
 		$timeout(function() { 
 			$scope.lucidModal();
-		}, 30000);
+		}, 60000);
 	}]);
 })(angular);

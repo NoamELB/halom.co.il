@@ -299,12 +299,13 @@ ul {
         }
       }
     }
-    img {
-      margin: 10px auto;
-      display: block;
-    }
-
   }
+.img-logo {
+  margin: 10px auto;
+  width: 155px;
+  height: 147px;
+  background: url(../images/owl.png);
+}
 /*
  * SMALL SCREEN VERSION
  * ====================
