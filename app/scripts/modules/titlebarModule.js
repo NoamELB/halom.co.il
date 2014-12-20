@@ -13,9 +13,11 @@
 				{"url":"/dreamv", "clicked": false}
 			];
 
+			/* check when URL changes */
 			$scope.$watch(function() {
 				return $location.path(); 
 			},function(val) {
+				$scope.isClicked = false; // close nav-bar when redirected
 				angular.forEach($scope.loc, function(loc, index) {
 					loc.clicked = (val == loc.url);
 				});

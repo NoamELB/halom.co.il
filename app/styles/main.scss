@@ -10,11 +10,11 @@
   $light-grey:#cccccc;
   $logo-color:#660033;
 	$black:rgba(0,0,0,0.9);
-  $silver: silver;
+  $silver: #808080;
   $opgreyish:rgba(51, 51, 51, 0.95);
 	$push:10px;
   $width:960px;
-	$min-width:300px;
+	$min-width:250px;
   $min-height:200px;
   $bar-height:56px;
 
@@ -286,15 +286,13 @@ ul {
       background: $bar-bg;
       border-radius: 15px;
       a {
-        font-size: 20px;
-        letter-spacing: -0.2px;
+        font-size: 27px !important;
+        letter-spacing: -1px;
         color: $bg-color;
         &:hover{
+          color: $silver;
           text-decoration: none;
         }
-      }
-      &:hover {
-        background: $light-grey;
       }
     }
     img {
@@ -368,7 +366,7 @@ ul {
     .show-ignored-bar {
       white-space: nowrap;
       display: inline;
-      position: absolute;
+      position: fixed;
       opacity: .9;
       top: 55px;
       left: 0;
@@ -383,15 +381,15 @@ ul {
       &.ng-hide-remove-active {
         transition: .5s linear all;
       }
-
-
       &.ng-hide-add,
       &.ng-hide-remove.ng-hide-remove-active {
         opacity: .9;
+        width: 200px;
       }
       &.ng-hide-remove,
       &.ng-hide-add.ng-hide-add-active {
         opacity: 0;
+        width: 0;
       }
       li a {
         padding: $push 5px;

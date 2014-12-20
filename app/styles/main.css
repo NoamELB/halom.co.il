@@ -5347,7 +5347,7 @@ ul {
  */
 .main-cnt {
   width: 100%;
-  min-width: 300px;
+  min-width: 250px;
   min-height: 200px;
   /*
    * ANIMATE PAGE-TRANSITIONS
@@ -5372,7 +5372,7 @@ ul {
     line-height: 28px; }
   .main-cnt .middle {
     max-width: 960px;
-    min-width: 300px;
+    min-width: 250px;
     margin: 0 auto;
     padding: 20px 20px;
     background: rgba(0, 0, 0, 0.9); }
@@ -5442,7 +5442,7 @@ ul {
   position: relative;
   z-index: 2;
   width: 100%;
-  min-width: 300px;
+  min-width: 250px;
   height: 56px;
   padding: 0 0;
   margin: 0 auto;
@@ -5452,7 +5452,7 @@ ul {
   box-shadow: 0px 0px 8px -1px rgba(0, 0, 0, 0.9); }
   .top-part .main-bar {
     max-width: 960px;
-    min-width: 300px;
+    min-width: 250px;
     margin: 0 auto;
     padding: 0;
     text-align: center;
@@ -5477,9 +5477,9 @@ ul {
         letter-spacing: -0.5px;
         color: white; }
         .top-part .main-bar .bar-list li a:hover {
-          color: silver; }
+          color: gray; }
     .top-part .main-bar .clicked {
-      color: silver !important; }
+      color: gray !important; }
 
 /*
  * FOOTER
@@ -5508,7 +5508,7 @@ ul {
 .welcome {
   max-width: 960px;
   height: 100%;
-  min-width: 300px;
+  min-width: 250px;
   margin: 20px auto; }
   .welcome h1 {
     padding-top: 0;
@@ -5526,13 +5526,12 @@ ul {
     background: #660066;
     border-radius: 15px; }
     .welcome .btn-start a {
-      font-size: 20px;
-      letter-spacing: -0.2px;
+      font-size: 27px !important;
+      letter-spacing: -1px;
       color: #e8e8e7; }
       .welcome .btn-start a:hover {
+        color: gray;
         text-decoration: none; }
-    .welcome .btn-start:hover {
-      background: #cccccc; }
   .welcome img {
     margin: 10px auto;
     display: block; }
@@ -5556,13 +5555,13 @@ ul {
 .small .top-part {
   width: 100%;
   position: relative;
-  min-width: 300px;
+  min-width: 250px;
   height: 56px;
   padding: 0;
   margin: 0 auto; }
   .small .top-part .main-bar {
     width: 100%;
-    min-width: 300px;
+    min-width: 250px;
     height: 55px;
     margin: 0px auto;
     padding: 0; }
@@ -5589,7 +5588,7 @@ ul {
   .small .top-part .show-ignored-bar {
     white-space: nowrap;
     display: inline;
-    position: absolute;
+    position: fixed;
     opacity: .9;
     top: 55px;
     left: 0;
@@ -5602,9 +5601,11 @@ ul {
     .small .top-part .show-ignored-bar.ng-hide-add-active, .small .top-part .show-ignored-bar.ng-hide-remove-active {
       transition: .5s linear all; }
     .small .top-part .show-ignored-bar.ng-hide-add, .small .top-part .show-ignored-bar.ng-hide-remove.ng-hide-remove-active {
-      opacity: .9; }
+      opacity: .9;
+      width: 200px; }
     .small .top-part .show-ignored-bar.ng-hide-remove, .small .top-part .show-ignored-bar.ng-hide-add.ng-hide-add-active {
-      opacity: 0; }
+      opacity: 0;
+      width: 0; }
     .small .top-part .show-ignored-bar li a {
       padding: 10px 5px;
       display: block;
