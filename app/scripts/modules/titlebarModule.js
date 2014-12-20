@@ -9,7 +9,7 @@
 			$scope.isClicked = false;
 			$scope.loc = [
 				{"url":"/lucid", "clicked": false},
-				{"url":"/articles/-1", "clicked": false},
+				{"url":"/articles/menu", "clicked": false},
 				{"url":"/dreamv", "clicked": false}
 			];
 
@@ -19,7 +19,7 @@
 			},function(val) {
 				$scope.isClicked = false; // close nav-bar when redirected
 				angular.forEach($scope.loc, function(loc, index) {
-					loc.clicked = (val == loc.url);
+					loc.clicked = (val.slice(0,6) == loc.url.slice(0,6)); // gets first 6 letters and compares them
 				});
 			});
 

@@ -5486,6 +5486,7 @@ ul {
  * ======
  */
 .footer-bar {
+  position: relative;
   width: 100%;
   margin: 20px auto; }
   .footer-bar ul {
