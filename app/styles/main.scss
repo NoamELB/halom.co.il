@@ -11,6 +11,7 @@
   $logo-color:#660033;
 	$black:rgba(0,0,0,0.9);
   $silver: #808080;
+  $cyan: cyan;
   $opgreyish:rgba(51, 51, 51, 0.95);
 	$push:10px;
   $width:960px;
@@ -251,10 +252,13 @@ ul {
         font-size: 16px;
         text-decoration: none;
         letter-spacing: -0.3px;
-        color: $logo-color !important;
+        color: $logo-color;
         &:hover{
           text-decoration: underline;
         }
+      }
+      .tooltip-inner a {
+        color: $cyan;
       }
     }
   }

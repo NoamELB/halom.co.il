@@ -5497,9 +5497,11 @@ ul {
         font-size: 16px;
         text-decoration: none;
         letter-spacing: -0.3px;
-        color: #660033 !important; }
+        color: #660033; }
         .footer-bar ul li a:hover {
           text-decoration: underline; }
+      .footer-bar ul li .tooltip-inner a {
+        color: cyan; }
 
 /*
  * WELCOME PAGE
