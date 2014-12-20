@@ -1,3 +1,8 @@
+/*▬▬▬▬▬▬▬▬▬▬▬ஜ۩۞۩ஜ▬▬▬▬▬▬▬▬▬▬▬▬▬
+▬▬ Main module of the app.	  ▬▬
+▬▬ Collects all the modules,  ▬▬
+▬▬ creates a filter & configs ▬▬
+▬▬▬▬▬▬▬▬▬▬▬▬▬ஜ۩۞۩ஜ▬▬▬▬▬▬▬▬▬▬▬▬▬*/
 (function(angular) {
 	'use strict';
 	angular.module('myApp', [
@@ -5,11 +10,17 @@
 		'siteControllers',
 		'siteTitlebar',
 		'siteFooterbar'
-	]).config(['$routeProvider', function ($routeProvider) {
+	])	
+	/* convert the string to html format */
+	.filter('strToHtml', ['$sce', function($sce) { 
+	    return function(string) {
+	        return $sce.trustAsHtml(string);
+	    };
+	}])
+	.config(['$routeProvider', function ($routeProvider) {
 		$routeProvider.
 		when('/', {
-			templateUrl: 'partials/welcome.html',
-			controller: 'WelcomeController'
+			templateUrl: 'partials/welcome.html'
 		})
 		.when('/lucid', {
 			templateUrl: 'partials/lucid.html',

@@ -6,7 +6,6 @@
 		 'ui.bootstrap',
 		 'articlesController',
 		 'mainController',
-		 'welcomeController',
 		 'widthController',
 		 'lucidController']);
 })(angular);

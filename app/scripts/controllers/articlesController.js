@@ -1,30 +1,27 @@
-/* ==========================================================================
-	Welcome Controller is responsible for animating the first page.
-	First it shows the second line, then it shows the image and at the end,
-	 it redirects the user to the first page.
-   =========================================================================*/    
+/*===========================================================================
+** Articles controller gets the articles from $parent and then from JSON.
+** Deals with the home-made accordion, which decides when to open and when
+**  to close the collapses.
+** The result is:
+**					★¸.•´¯`★¸¸.•´¯`★¸¸.•★¸¸.•
+**					★¸.•´¯`░╦╗╔╗╔╗╔╗░¸.•★¸¸.•
+**					★¸.•´¯`░╠╣║║╚╗╚╗░¸.•★¸¸.•
+**					★¸.•´¯`░╩╝╚╝╚╝╚╝░¸.•★¸¸.•
+**					★¸.•´¯`★¸¸.•´¯`★¸¸.•★¸¸.•
+*===========================================================================*/    
 (function(angular){
 	'use strict';
 	angular.module('articlesController', [])
-	.controller('ArticlesController', ['$scope', '$http', '$sce', '$timeout', function($scope, $http, $sce, $timeout) {
+	.controller('ArticlesController', ['$scope', '$http', '$timeout', function($scope, $http, $timeout) {
 		$scope.articles = $scope.data; // gets data from father scope - Main
-		var current = -1;
-		var delay = false;
-		
-		$http.get('articles.json').success(function(data){ // gets articles for child scope - Articles
-			$scope.articles = data;
-			//angular.forEach($scope.articles, function(article){
-				//$scope.articles[0].text+='<div class="fb-comments" data-href="https://www.facebook.com/halom.co.il" data-width="100%" data-numposts="5" data-colorscheme="dark"></div>';
-			//});
+		var delay = false; // delay between opening collapses
+		var current = -1; // currently open collapse
+ 		
+ 		/* get data again, both to reset last visit value, and 
+ 			to make sure it's here, in case gets here before $parent gets data */
+		$http.get('articles.json').success(function(data){
+			$scope.articles = data;				
 		});
-
-		if ($scope.articles === [])
-			console.log("duh");
-
-		/* convert the string to html format */
-		$scope.getHtml = function(unsafeHtml) {
-			return $sce.trustAsHtml(unsafeHtml);
-		};
 
 		/* decides whether to open an article, close and then open, or just close */
 		$scope.toggle = function(index) {
@@ -51,7 +48,6 @@
 				$scope.articles[index].isOpen = true;
 				current = index;
 				delay = false;
-
 		};
 	}]);
 })(angular);

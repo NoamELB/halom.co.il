@@ -1,10 +1,7 @@
-/* ==========================================================================
-	Width Controller handles the Size of the screen and determines when 
-		it's time to switch to Phone version.
-	How it works:
-		Whenever the web is resized, the controller will determine if
-		 the width is small enough to fit a phone.
-   =========================================================================*/
+/*===========================================================================
+** Width Controller handles the Size of the screen and checks every 0.5s
+** if the screen is small or not.
+*===========================================================================*/
 (function(angular){
 	'use strict';
 	angular.module('widthController', [])
