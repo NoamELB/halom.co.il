@@ -1,4 +1,1 @@
 User-agent: *
-
-Disallow: /scripts/
-Disallow: /styles/
