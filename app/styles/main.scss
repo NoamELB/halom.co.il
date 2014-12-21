@@ -3,21 +3,29 @@
  * VARS
  * ====
  */
-	$bg-color:#E8E8E7;
-	$light-color:white;
-  $bar-bg:#660066;
-	$greyish:#333333;
-  $light-grey:#cccccc;
-  $logo-color:#660033;
-	$black:rgba(0,0,0,0.9);
-  $silver: #808080;
-  $cyan: cyan;
-  $opgreyish:rgba(51, 51, 51, 0.95);
-	$push:10px;
-  $width:960px;
-	$min-width:250px;
-  $min-height:200px;
-  $bar-height:56px;
+$bg-color:#E8E8E7;
+$light-color:white;
+$bar-bg:#660066;
+$greyish:#333333;
+$light-grey:#cccccc;
+$logo-color:#660033;
+$black:rgba(0,0,0,0.9);
+$silver: #808080;
+$cyan: cyan;
+$opgreyish:rgba(51, 51, 51, 0.95);   
+  
+$push:10px;
+$width:960px;
+$min-width:250px;
+$min-height:200px;
+$bar-height:56px; 
+
+/*
+ * DAY SET
+ * =======
+ */
+$black-day:rgba(0,0,0,0.05);
+$bar-bg-day:#FFAF0A;   
 
 html {
   width: 100%;
@@ -25,6 +33,7 @@ html {
   -ms-text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%;
   direction: rtl;
+  transition: all 1s linear;
 } 
 body {
 	font-family: 'Alef Hebrew', serif;
@@ -80,7 +89,10 @@ ul {
     margin: 0 0;
     padding: $push $push;
     font-weight: normal;
-    color:$light-color;
+    color: $light-color;
+    .day & {
+      color: $black;
+    }
   }
   h1 {
     font-size: 40px;
@@ -95,12 +107,58 @@ ul {
     letter-spacing: -0.2px;
     line-height: 28px;
   }
+
+  p, .text {
+    .day-add &, .day-remove & {
+      transition: color 0s linear;
+    }
+    .day-remove.day-remove-active &,
+    .day-add.day-add-active & {
+      transition: color 1s linear;
+    }
+    .day-add &,
+    .day-remove.day-remove-active & {
+      color: $light-color;
+    }
+    .day-remove & ,
+    .day-add.day-add-active & {
+      color: $black;
+    }
+  }
   .middle {
     max-width: $width;
     min-width: $min-width;
     margin: 0 auto;
-      padding: 20px 20px;
+    padding: 20px 20px;
+    background: $black;
+    .day & {
+      background: $black-day;
+      .middle {
+        background: white;
+        border-color: $black;
+      }
+    }
+    .day-add &, .day-remove & {
+      transition: background 0s linear;
+    }
+    .day-remove.day-remove-active &,
+    .day-add.day-add-active & {
+      transition: background 1s linear;
+    }
+    .day-add &,
+    .day-remove.day-remove-active & {
       background: $black;
+    }
+    .day-remove & ,
+    .day-add.day-add-active & {
+      background: $black-day;
+    }
+
+
+    .middle {
+        border-radius: 5px;
+        border: 1px solid $light-color;
+      }
     .link-next {
       margin-right: 9px;
       padding: 5px 9px;
@@ -137,6 +195,9 @@ ul {
         padding: $push $push;
         font-weight: normal;
         color: $light-color;
+        .day & {
+          color: $black;
+        }
       }
     }
     .x{
@@ -193,9 +254,30 @@ ul {
   padding: 0 0;
   margin: 0 auto;
   background: $bar-bg;
-  -webkit-box-shadow: 0px 0px 8px -1px $black;
-  -moz-box-shadow: 0px 0px 8px -1px $black;
-  box-shadow: 0px 0px 8px -1px $black;
+  -webkit-box-shadow: 0px 0px 8px -1px black;
+  -moz-box-shadow: 0px 0px 8px -1px black;
+  box-shadow: 0px 0px 8px -1px black;
+  .day & {
+    background: $bar-bg-day;
+  }
+  .day-add &, .day-remove & {
+    transition: background 0s linear;
+  }
+  .day-remove.day-remove-active &,
+  .day-add.day-add-active & {
+    transition: background 1s linear;
+  }
+  .day-add &,
+  .day-remove.day-remove-active & {
+    background: $bar-bg;
+  }
+  .day-remove & ,
+  .day-add.day-add-active & {
+    background: $bar-bg-day;
+  }
+
+
+
   .main-bar {
     max-width: $width;
     min-width: $min-width;
@@ -229,6 +311,18 @@ ul {
           color: $silver;
         }
       }
+      .square {
+        float: left;
+        margin-top: 10px;
+        margin-right: 50px;
+        padding: 30px 30px 0 0;
+        border: 3px solid white;
+        border-radius: 5px;
+        background-color: $bar-bg-day;
+        .day & {
+          background-color: $bar-bg;
+        }
+      }
     }
     .clicked {
       color: $silver !important;
@@ -258,7 +352,7 @@ ul {
           text-decoration: underline;
         }
       }
-      .tooltip-inner a {
+      .tooltip a {
         color: $cyan;
       }
     }
@@ -277,23 +371,26 @@ ul {
       padding-top: 0;
       font-size: 64px;
       letter-spacing: -1px;
-      color: $logo-color;
+      color: $bar-bg;
     }
     h2 {
       font-size: 35px;
       letter-spacing: -0.6px;
-      color: $bar-bg;
+      color: $logo-color;
     }
     .btn-start {
       max-width: 290px;
       margin: 10px auto;
       padding: 10px 0;
       background: $bar-bg;
-      border-radius: 15px;
+      border-radius: 12px;
+      .day & {
+        background: $bar-bg-day;
+      }
       a {
         font-size: 27px !important;
         letter-spacing: -1px;
-        color: $bg-color;
+        color: $light-color;
         &:hover{
           color: $silver;
           text-decoration: none;
@@ -363,11 +460,17 @@ ul {
       float: right;
     }
     .bar-btn {
-      padding-top: 0 !important;
+      padding: 0 12px 5px !important;
       font-size: 40px !important;
       cursor: pointer;
       display: block;
       float: left;
+      &.square {
+        position: relative;
+        height: 30px;
+        margin-left: 10px;
+        top: 3px;
+      }
     }
     .show-ignored-bar {
       white-space: nowrap;
@@ -377,8 +480,11 @@ ul {
       top: 55px;
       left: 0;
       width: 200px;
-      background: $black;
       border-top: 1px solid $light-grey;
+      background: $black;
+      .day & {
+        background: $black-day;
+      }
       /* needed for animation to  work well */
       &.ng-hide-add, .my-element.ng-hide-remove {
         transition: 0s linear all;

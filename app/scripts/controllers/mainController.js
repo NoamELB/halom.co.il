@@ -36,7 +36,7 @@
 	    		}
 				$timeout(function() { // call function again
 					$scope.lucidModal();
-				}, 60000 * Math.random() + 120000); // 2-3 minutes		    	
+				}, 300000 * Math.random() + 180000); // 3-8 minutes		    	
 		    });
 		};
 

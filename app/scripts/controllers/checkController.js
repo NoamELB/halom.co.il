@@ -10,6 +10,6 @@
 	.controller('CheckController', ['$scope', '$timeout', '$modalInstance', function($scope, $timeout, $modalInstance) {
 		$timeout(function() {
 			$modalInstance.dismiss('cancel');
-		}, 3000);
+		}, 4000);
 	}]);
 })(angular);

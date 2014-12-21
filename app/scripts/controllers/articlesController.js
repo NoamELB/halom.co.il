@@ -23,7 +23,7 @@
 			$scope.articles = data;				
 			/* decides which collapse to open upon load. default is menu to open none */
 			$timeout(function() {					
-				if ($routeParams.toOpen >= 0) { 				
+				if ($routeParams.toOpen >= 0 && current < 0) { 				
 					$scope.articles[$routeParams.toOpen].isOpen = true;
 					current = $routeParams.toOpen; 
 				}
