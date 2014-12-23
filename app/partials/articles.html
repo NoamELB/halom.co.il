@@ -1,6 +1,6 @@
 <section class="middle">
 	<div ng-repeat="article in articles" class="articles">
-		<a ng-href="" class="link-articles articles-title" ng-click="toggle($index)" ng-bind="article.title"></a>
+		<a href="" class="link-articles articles-title" ng-click="toggle($index)" ng-bind="article.title"></a>
 		<div collapse="!article.isOpen" ng-bind-html="article.text | strToHtml" class="middle"></div>
 	</div>
 </section>
