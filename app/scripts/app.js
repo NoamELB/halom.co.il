@@ -8,6 +8,7 @@
 	angular.module('myApp', [
 		'ngRoute',
 		'siteControllers',
+		'hashPrefix',
 		'siteTitlebar',
 		'siteFooterbar'
 	])	

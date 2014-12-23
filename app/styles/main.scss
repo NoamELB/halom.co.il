@@ -164,6 +164,7 @@ ul {
       padding: 5px 9px;
       background: $light-color; 
       color: $opgreyish;
+      cursor: pointer;
       &:hover {
         background: $opgreyish; 
         color: $light-color;
@@ -180,6 +181,7 @@ ul {
       width: 250px;
       background: $light-color; 
       color: $opgreyish;
+      cursor: pointer;
       &:hover {
         background: $opgreyish;
         color: $light-color;
@@ -202,6 +204,7 @@ ul {
     }
     .x{
       font-weight: bold;
+      cursor: pointer;
       &:hover{
         text-decoration: none;
       }
@@ -319,6 +322,7 @@ ul {
         border: 3px solid white;
         border-radius: 5px;
         background-color: $bar-bg-day;
+        cursor: pointer;
         .day & {
           background-color: $bar-bg;
         }

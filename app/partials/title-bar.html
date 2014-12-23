@@ -1,15 +1,15 @@
 <div class="top-part">
 	<div class="main-bar">
 		<ul class="bar-list">
-			<li><a id="logo" href="#/">חלום</a></li>
+			<li><a id="logo" ng-href="#!/">חלום</a></li>
 			<span class="show-ignored-bar ng-hide" ng-show="!isSmall || isClicked">
-				<li><a ng-class="{'clicked': loc[0].clicked}" href="#{{::loc[0].url}}">המדריך לרוקם החלומות</a></li>
-				<li><a ng-class="{'clicked': loc[1].clicked}" href="#{{::loc[1].url}}">מאמרים</a></li>
-				<li><a ng-class="{'clicked': loc[2].clicked}" href="#{{::loc[2].url}}">בתולת החלומות</a></li></li>
+				<li><a ng-class="{'clicked': loc[0].clicked}" ng-href="#!{{::loc[0].url}}">המדריך לרוקם החלומות</a></li>
+				<li><a ng-class="{'clicked': loc[1].clicked}" ng-href="#!{{::loc[1].url}}">מאמרים</a></li>
+				<li><a ng-class="{'clicked': loc[2].clicked}" ng-href="#!{{::loc[2].url}}">בתולת החלומות</a></li></li>
 				<li><a href="" ng-click="openForum()">פורום</a></li>
 			</span>
-			<li><a ng-show="isSmall" ng-click="isClicked=!isClicked" class="bar-btn" ng-class="{'clicked':isClicked}"  href="">≡</a></li>
-			<li><a ng-click="toggleDay()" class="bar-btn square" href=""></a></li>
+			<li><a ng-show="isSmall" ng-click="isClicked=!isClicked" class="bar-btn" ng-class="{'clicked':isClicked}"  ng-href="">≡</a></li>
+			<li><a ng-click="toggleDay()" class="bar-btn square" ng-href=""></a></li>
 		</ul>
 	</div>
 </div>
