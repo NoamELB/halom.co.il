@@ -12,15 +12,17 @@
 (function(angular){
 	'use strict';
 	angular.module('articlesController', [])
-	.controller('ArticlesController', ['$scope', '$http', '$timeout', '$routeParams', '$location', function($scope, $http, $timeout, $routeParams, $location) {
-		$scope.articles = $scope.data; // gets data from father scope - Main
+	.controller('ArticlesController', ['$scope', 'ArticlesList', '$timeout', '$routeParams', '$location', function($scope, ArticlesList, $timeout, $routeParams, $location) {
+		$scope.articles = []; // gets data from father scope - Main
 		var delay = false; // delay between opening collapses
 		var current = -1;//$routeParams.toOpen; // currently open collapse
  		
- 		/* get data again, both to reset last visit value, and 
- 			to make sure it's here, in case gets here before $parent gets data */
-		$http.get('articles.json').success(function(data){
+ 		/* gets data from service */
+		ArticlesList.success(function(data){
 			$scope.articles = data;				
+			angular.forEach($scope.articles, function(article, index) { // initalize all to be closed
+				article.isOpen = false;
+			});
 			/* decides which collapse to open upon load. default is menu to open none */
 			$timeout(function() {					
 				if ($routeParams.toOpen >= 0 && current < 0) { 				

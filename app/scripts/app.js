@@ -17,6 +17,12 @@
 	        return $sce.trustAsHtml(string);
 	    };
 	}])
+	.service('ArticlesList', ['$http', function($http) {
+		return $http.get('articles.json');
+	}])
+	.run(['ArticlesList', function(ArticlesList) {
+		ArticlesList;
+	}])
 	.config(['$routeProvider', function ($routeProvider) {
 		$routeProvider.
 		when('/', {

@@ -1,6 +1,5 @@
 /*===========================================================================
-** Main controller first gets the articles from the JSON data.
-** It also opens a modal after 30s.
+** Main controller opens a modal after 30s.
 ** If the modal was 'Closed', which happens only if clicked on "don't bother",
 **  then modal's promise will return done, and nothing will happen.
 ** If the modal was 'Dismissed', which happens any other way it is closed,
@@ -10,17 +9,11 @@
 (function(angular){
 	'use strict';
 	angular.module('mainController', [])
-	.controller('MainController', ['$scope', '$http', '$timeout', '$modal', '$location', function ($scope, $http, $timeout, $modal, $location) {
-		$scope.data = [];
-
-		/* gets JSON data for child scope - gets it on page-load instead of partial load */
-		$http.get('articles.json').success(function(data){ 
-			$scope.data = data;
-		});
+	.controller('MainController', ['$timeout', '$modal', '$location', function ($timeout, $modal, $location) {
 
 		/* pops up a modal every 2-3m,
 		   stops once pressed on 'dont bother' button. */
-		$scope.lucidModal = function() {
+		var lucidModal = function() {
 			$modal.open({
 	    		templateUrl: 'partials/modals/reality-check.html',
 	    		size: 'sm'
@@ -35,14 +28,14 @@
 	    			$location.path('/articles/2');
 	    		}
 				$timeout(function() { // call function again
-					$scope.lucidModal();
+					lucidModal();
 				}, 300000 * Math.random() + 180000); // 3-8 minutes		    	
 		    });
 		};
 
 		/* start reality check after 60s */
 		$timeout(function() { 
-			$scope.lucidModal();
+			lucidModal();
 		}, 60000);
 	}]);
 })(angular);
