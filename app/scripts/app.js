@@ -8,7 +8,6 @@
 	angular.module('myApp', [
 		'ngRoute',
 		'siteControllers',
-		'hashPrefix',
 		'siteTitlebar',
 		'siteFooterbar'
 	])	
@@ -24,7 +23,7 @@
 	.run(['ArticlesList', function(ArticlesList) {
 		ArticlesList;
 	}])
-	.config(['$routeProvider', function ($routeProvider) {
+	.config(['$routeProvider','$locationProvider', function ($routeProvider, $locationProvider) {
 		$routeProvider.
 		when('/', {
 			templateUrl: 'partials/welcome.html'
@@ -43,5 +42,6 @@
 		.otherwise({
 			redirectTo: '/' // default page
 		});
+		$locationProvider.html5Mode(true);
 	}]);
 })(angular);
