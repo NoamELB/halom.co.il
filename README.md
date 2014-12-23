@@ -1,4 +1,4 @@
-halom.co.il
+www.halom.co.il
 ===========
 
-halom.co.il web app using AngularJS
+www.halom.co.il web app using AngularJS
