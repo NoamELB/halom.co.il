@@ -9,7 +9,8 @@
 		'ngRoute',
 		'siteControllers',
 		'siteTitlebar',
-		'siteFooterbar'
+		'siteFooterbar',
+		'siteHeader'
 	])	
 	/* convert the string to html format */
 	.filter('strToHtml', ['$sce', function($sce) { 
