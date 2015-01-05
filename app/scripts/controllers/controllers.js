@@ -8,5 +8,6 @@
 		 'checkController',
 		 'mainController',
 		 'widthController',
+		 'headerController',
 		 'lucidController']);
 })(angular);

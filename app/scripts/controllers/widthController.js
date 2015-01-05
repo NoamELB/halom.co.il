@@ -6,8 +6,6 @@
 	'use strict';
 	angular.module('widthController', [])
 	.controller('WidthController', ['$scope', '$window', '$interval', function($scope, $window, $interval) {
-		$scope.title = "חלום | halom.co.il";
-		$scope.metaDescription = "חלום, אתר על חלומות צלולים, הכולל מאמרים על חלומות מודעים ועל השיטות השונות להפוך לרוקם חלומות. Halom, website about lucid dreams in hebrew.";
 
 		var widthForSmall = '850'; // minimum computer display
 		$scope.isSmall = $window.innerWidth < widthForSmall;
