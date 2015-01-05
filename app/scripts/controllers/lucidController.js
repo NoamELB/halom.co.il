@@ -12,6 +12,9 @@
 	'use strict';
 	angular.module('lucidController', [])
 	.controller('LucidController', ['$scope', '$timeout', function($scope, $timeout) {
+		$scope.$parent.title = "מה זה חלום צלול?";
+		$scope.$parent.metaDescription = "מה זה חלום צלול? מה ההבדל בין חלום צלול למדיטציה? לחלום רגיל? איך שולטים בחלומות? מה זה נותן?";
+
 		$scope.paragraphs = // show p0 first 
 			[
 				{display: true}, 
