@@ -1,7 +1,6 @@
 (function(angular){
 	'use strict';
-
-	angular.module('siteControllers', 
+	angular.module('siteControllers',
 		['ngAnimate',
 		 'ui.bootstrap',
 		 'articlesController',
@@ -9,5 +8,7 @@
 		 'mainController',
 		 'widthController',
 		 'headerController',
-		 'lucidController']);
+		 'lucidController', 
+		 'dreamvController',
+		 'landingController']);
 })(angular);

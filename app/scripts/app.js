@@ -27,9 +27,10 @@
 	.config(['$routeProvider','$locationProvider', function ($routeProvider, $locationProvider) {
 		$routeProvider.
 		when('/', {
-			templateUrl: 'partials/welcome.html'
+			templateUrl: 'partials/welcome.html',
+			controller: 'LandingController'
 		})
-		.when('/lucid', {
+		.when('/lucid/:toOpen', {
 			templateUrl: 'partials/lucid.html',
 			controller: 'LucidController'
 		})
@@ -38,7 +39,8 @@
 			controller: 'ArticlesController'
 		})
 		.when('/dreamv', {
-			templateUrl: 'partials/dreamvbook.html'
+			templateUrl: 'partials/dreamvbook.html',
+			controller: 'DreamvController'
 		})
 		.otherwise({
 			redirectTo: '/' // default page

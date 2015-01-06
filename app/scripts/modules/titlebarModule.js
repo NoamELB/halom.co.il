@@ -8,7 +8,7 @@
 	.controller('TitlebarController', ['$scope', '$location','$modal', function($scope, $location, $modal) {
 			$scope.isClicked = false;
 			$scope.loc = [
-				{"url":"/lucid", "clicked": false},
+				{"url":"/lucid/0", "clicked": false},
 				{"url":"/articles/menu", "clicked": false},
 				{"url":"/dreamv", "clicked": false}
 			];

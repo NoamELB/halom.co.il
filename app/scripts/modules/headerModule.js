@@ -1,6 +1,5 @@
 /*===========================================================================
-** Titlebar module decides which list-item in the titlebar is marked.
-** Also opens the modal for 'Forum'.
+** Header module - change header tags responsivly.
 *===========================================================================*/
 (function(angular){
 	'use strict';

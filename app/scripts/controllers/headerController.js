@@ -1,6 +1,5 @@
 /*===========================================================================
-** Width Controller handles the Size of the screen and checks every 0.5s
-** if the screen is small or not.
+** Header controller - change meta tags for dream virgin page and landing page
 *===========================================================================*/
 (function(angular){
 	'use strict';

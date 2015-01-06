@@ -15,11 +15,48 @@
 	.controller('ArticlesController', ['$scope', 'ArticlesList', '$timeout', '$routeParams', '$location', 'Head', function($scope, ArticlesList, $timeout, $routeParams, $location, Head) {
 		$scope.articles = []; // gets data from father scope - Main
 		var delay = false; // delay between opening collapses
-		var current = -1;//$routeParams.toOpen; // currently open collapse
-		var menuMetas = ["menutitle", "menudes", "menukeywords"];
-		var titles = ["0t","1t","2t","3t","4t","5t","6t","7t","8t","9t","10t"];
-		var des = ["d0t","d1t","d2t","d3t","d4t","d5t","d6t","d7t","d8t","d9t","d10t"];
-		var key = ["k0t","k1t","k2t","k3t","k4t","k5t","k6t","k7t","k8t","k9t","k10t"]
+		var current = -1; // currently open collapse
+
+		// variables for the Head.setHead(title, meta description, meta keywords) function
+		var menuMetas = [	"חלום צלול - מאמרים",
+							"מאמרים שונים על חלומות צלולים ושליטה בתת-מודע. כדוגמת: איך לנהל יומן חלומות, מה זה בדיקת מציאות, דרכים להתמודדות עם שיתוק שינה ועוד.",
+							"יומן חלומות, בדיקת מציאות, שיתוק שינה, WILD, MILD, חלום צלול, תת-מודע."];
+		var titles = [	"חלום צלול - יומן החלומות",
+						"חלום צלול - שבירת הגוף",
+						"חלום צלול - בדיקת מציאות",
+						"חלום צלול - מדריך החלומות",
+						"חלום צלול - שיתוק שינה",
+						"חלום צלול - MILD",
+						"חלום צלול - WILD",
+						"חלום צלול - אליס",
+						"חלום צלול - הישרדות בחלום",
+						"חלום צלול - התחלה (הסרט)",
+						"חלום צלול - מחקר במכון ויצמן"
+						];
+		var des = [	"השלב הראשון בדרך לחלומות הצלולים, איך לנהל יומן חלומות או מחברת חלומות. הליך רישום החלומות הוא הבסיס לכל מה שתעשו, לכן הוא חשוב כל כך.",
+					"רשמנו חלומות ביומן או מחברת במשך שבועות ועדיין לא קרה כלום, מה אני צריך לעשות כדי לחוות חלום צלול?",
+					"בדיקות המציאות באות להגיד לנו האם אנחנו חולמים או לא. מדריך על אופן הביצוע של בדיקת מציאות, מתי? איך? ולמה?",
+					"הסבר על מדריך החלומות - כל מי שאיי פעם עשה מדיטציה, וודאי נפגש עם דמות כלשהי. חיית עוצמה, מדריך אישי, מלאך, יישות אור, או מורה המוביל אל הדרך הנכונה.",
+					"הסבר על שיתוק שינה - שיתוק השינה אינו הפרעת שינה ואין כל קשר בינו לבין הפרעות שינה. שיתוק השינה וכל התהליכים הקשורים אליו הינם תהליכים טבעיים לחלוטין שאנו חווים בכל לילה.",
+					"MILD - Mnemonic Induced Lucid Dreaming. הסבר על שיטה פרקטית לכניסה לחלומות צלולים.",
+					"WILD - Wake-Initiated Lucid Dreaming. הסבר על שטיה פרקטית לכניסה לחלום צלול.",
+					"מאמר על אליס בארץ הפלאות בהקשרי חלומות, בדגש על האופן שבו אנחנו רואים מראה או מראות בחלומות ובעיקר בחלום צלול. על האופן שבא אנחנו תופשים את עצמנו בתת-מודע.",
+					"חלימה מודעת למתקדמים - מדריך על הדרכים לשיפור והגברת הצלילות בחלום צלול על-ידי שיטות שונות.",
+					"ניתוח של הסרט התחלה (Inception) בהקשרי חלומות צלולים או חלימה מודעת. האם זה סרט יותר מציאותי ממה שחשבנו?",
+					"הסבר על מחקר שנעשה על חלומות צלולים וחלימה מודעת במכון ויצמן ב-2011 על-ידי חלימה צלולה בתוך מכשיר MRI."
+					];
+		var key = [	"חלומות צלולים, יומן חלומות, מחברת חלומות, רישום החלומות,  בסיס.",
+					"חלומות, יומן, חלום צלול, גוף, נשמה, גישה הפיזיולוגית, גישה הרוחנית.",
+					"בדיקת מציאות, בדיקות מציאות, חלום צלול, התעוררות כוזבת, חלום שווא, ספירת אצבעות, מבחן הזיכרון, מבחן ההיגיון.",
+					"מדריך החלומות, מדיטציה, דמות, חיית עוצמה, מדריך אישי, מלאך, יישות אור,  מורה.",
+					"שיתוק שינה, הפרעת שינה, תהליכים טבעיים, לילה, הירדמות, שינה היפנוגוגית, תחושת נפילה, פחד.",
+					"MILD, Mnemonic, Induced, Lucid, Dreaming, כניסה לחלומות צלולים, WBTB, מעגלי שינה, REM.",
+					"WILD,Wake-Initiated, Lucid, Dreaming, כניסה לחלום צלול, מדיטציית 7 השעות, מיקאוֹ אוּסוּי, מעגלי השינה, MILD.",
+					"אליס, ארץ הפלאות, חלומות, מראה, חלום צלול, תפישה עצמית, תת-מודע.",
+					"חלימה מודעת למתקדמים, שיפור צלילות, הגברת צלילות, חלום צלול, התבוננות, שפשוף ידיים, סיבוב במקום, פקודות קוליות, ריצה, בדיקת מציאות.",
+					"סרט, התחלה, Inception, חלומות צלולים, חלימה מודעת, מציאותי, חלימה, תת-מודע, בדיקת מציאות, קובּ, לימבו.",
+					"מחקר, חלומות צלולים, חלימה מודעת, מכון ויצמן, 2011, חלימה צלולה, MRI."
+					];
  		
  		/* gets data from service */
 		ArticlesList.success(function(data){
@@ -28,21 +65,21 @@
 				article.isOpen = false;
 			});
 			
-			if ($location.path() === "/articles/menu")
+			if ($routeParams.toOpen === "menu")
 				Head.setHead(menuMetas[0],menuMetas[1],menuMetas[2]);
-			else Head.setHead(titles[$location.path().slice(10)], des[$location.path().slice(10)], key[$location.path().slice(10)]);
+			else Head.setHead(titles[parseInt($routeParams.toOpen)], des[parseInt($routeParams.toOpen)], key[parseInt($routeParams.toOpen)]);
 			/* decides which collapse to open upon load. default is menu to open none */
 			$timeout(function() {					
-				if ($routeParams.toOpen >= 0 && current < 0) { 				
-					$scope.articles[$routeParams.toOpen].isOpen = true;
-					current = $routeParams.toOpen; 
+				if (parseInt($routeParams.toOpen) >= 0 && current < 0) { 				
+					$scope.articles[parseInt($routeParams.toOpen)].isOpen = true;
+					current = parseInt($routeParams.toOpen); 
 				}
 			}, 0);
 		});
 
 		/* decides whether to open an article, close and then open, or just close */
 		$scope.toggle = function(index) {			
-			if (current == -1) { // if nothing is open, simply open
+			if (current === -1) { // if nothing is open, simply open
 				openArticle(index);
 				return;
 			}
@@ -66,7 +103,7 @@
 				$scope.articles[index].isOpen = true;
 				current = index;
 				$location.path('/articles/' + index, false);
-				Head.setHead(titles[$location.path().slice(10)], des[$location.path().slice(10)], key[$location.path().slice(10)]);
+				Head.setHead(titles[index], des[index], key[index]);
 				delay = false;
 		};
 
