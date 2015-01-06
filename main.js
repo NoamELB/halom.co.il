@@ -11,11 +11,12 @@ app.use('/images', express.static(__dirname + '/images'));
 app.use('/styles', express.static(__dirname + '/styles'));
 app.use('/partials', express.static(__dirname + '/partials'));
 
-app.all('/*', function(req, res) {
+// run a local prerender.io server for testing
+app.use(require('prerender-node').set('prerenderServiceUrl', 'http://localhost:3000/'));
+app.use('/*', function(req, res) {
     // Just send the index.html for other files to support HTML5Mode
     res.sendfile('app/index.html', { root: __dirname });
 });
-app.use(require('prerender-node'));
 app.get("/", function(req, res) {
 	res.render('index');
 });
