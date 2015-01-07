@@ -15,10 +15,7 @@ app.use('/partials', express.static(__dirname + '/partials'));
 app.use(require('prerender-node').set('prerenderServiceUrl', 'http://localhost:3000/'));
 app.use('/*', function(req, res) {
     // Just send the index.html for other files to support HTML5Mode
-    res.sendfile('app/index.html', { root: __dirname });
-});
-app.get("/", function(req, res) {
-	res.render('index');
+    res.sendFile('app/index.html', { root: __dirname });
 });
 
 app.listen(app.get('port'), function(){
