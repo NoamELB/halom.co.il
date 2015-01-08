@@ -26,7 +26,7 @@
 	}])
 	.config(['$routeProvider','$locationProvider', function ($routeProvider, $locationProvider) {
 		$routeProvider.
-		when('/', {
+		when('/landing', {
 			templateUrl: 'partials/welcome.html',
 			controller: 'LandingController'
 		})
@@ -43,7 +43,7 @@
 			controller: 'DreamvController'
 		})
 		.otherwise({
-			redirectTo: '/' // default page
+			redirectTo: '/landing' // default page
 		});
 		$locationProvider.html5Mode(true);
 	}]);
